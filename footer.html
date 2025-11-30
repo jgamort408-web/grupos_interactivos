@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+
+<style>
+/* =========================================================
+   🌙 FANTASY LEARNING UI — FOOTER OFICIAL
+   Fondo sólido, estilo elegante y coherente con tu diseño
+   ========================================================= */
+
+:root {
+  --bg-footer: #0b0c1a;          /* Fondo sólido */
+  --surface: #13152b;
+  --text: #e9e8ff;
+  --text-muted: #a2a6c9;
+  --accent: #9b87f5;
+  --accent-2: #ffb4e6;
+  --border: #2a2d52;
+  --radius: 18px;
+  --transition: .25s ease;
+}
+
+/* ----- CONTENEDOR PRINCIPAL ----- */
+footer.fantasy-footer {
+  width: 100%;
+  background: var(--bg-footer);     /* Fondo sólido */
+  padding: 2.5rem 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  box-sizing: border-box;
+}
+
+/* ----- CONTENIDO INTERNO ----- */
+.footer-inner {
+  width: min(1200px, 92vw);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ----- COLUMNAS ----- */
+.footer-left,
+.footer-right {
+  flex: 1;
+  min-width: 260px;
+}
+
+/* ----- TÍTULOS ----- */
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: .6rem;
+  letter-spacing: .4px;
+}
+
+/* ----- PÁRRAFOS Y CRÉDITOS ----- */
+.credits {
+  margin: .25rem 0;
+  font-size: .95rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.credits strong {
+  color: var(--accent-2);
+}
+
+/* ----- LICENCIA CC ----- */
+.license-text {
+  margin-top: 1rem;
+  font-size: .9rem;
+  color: var(--text-muted);
+}
+
+.license-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-2);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition), opacity var(--transition);
+}
+
+.license-link img {
+  height: 20px;
+  opacity: 0.85;
+  transition: opacity var(--transition);
+}
+
+.license-link:hover {
+  color: #fff;
+}
+
+.license-link:hover img {
+  opacity: 1;
+}
+
+/* ----- RESPONSIVE ----- */
+@media (max-width: 700px) {
+  footer.fantasy-footer {
+    text-align: center;
+  }
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-left, .footer-right {
+    text-align: center;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<footer class="fantasy-footer">
+  <div class="footer-inner">
+
+    <!-- Columna Izquierda -->
+    <div class="footer-left">
+      <h3 class="footer-title">Créditos del Proyecto</h3>
+
+      <p class="credits">Ponentes: <strong>Juan Gámez y Jorge Rodríguez</strong></p>
+      <p class="credits">Página Web: <strong>Juan Gámez</strong></p>
+      <p class="credits">Curso: <strong>Sensibilización Comunidades de Aprendizaje (CEP de Almería)</strong></p>
+
+      <p class="license-text">
+        Este trabajo tiene licencia 
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" 
+           target="_blank" rel="license noopener noreferrer" 
+           class="license-link">
+           CC BY-NC 4.0
+           <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="">
+           <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="">
+           <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt="">
+        </a>
+      </p>
+    </div>
+
+    <!-- Columna Derecha -->
+    <div class="footer-right">
+      <h3 class="footer-title">Sobre el Diseño</h3>
+
+      <p class="credits">Diseño UI: <strong>Fantasy Learning UI</strong></p>
+      <p class="credits">Proyecto inspirado en <strong>Comunidades de Aprendizaje</strong></p>
+      <p class="credits">Creado para experiencias educativas transformadoras ✨</p>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
