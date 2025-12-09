@@ -8,10 +8,9 @@
     const now = new Date();
     
     const CONFIG = {
-        // Pon aquí la hora real de tu clase. 
-        // He puesto la hora actual para que veas el efecto al abrir la página.
-        startHour: 18,      
-        startMinute: 30,   
+        // ¿A qué hora empieza la sesión hoy? (Formato 24h)
+        startHour: 18,    
+        startMinute: 0, 
         
         title: "⚡ SESIÓN EN VIVO",
         
@@ -28,11 +27,14 @@
     /* =========================================================
        📅 LA AGENDA (Coincide con tu actividad)
        ========================================================= */
-    const SCHEDULE = [
-        { name: "👋 Bienvenida",          duration: 2 }, // Minutos
-        { name: "🧩 1. Ordénalo (JUEGO)", duration: 15 }, // Aquí juegan con la app
-        { name: "🗣️ 2. Debate",           duration: 10 },
-        { name: "🏁 Cierre",              duration: 3 }
+const SCHEDULE = [
+        { name: "👋 Inicio: Preparación", duration: 5 },
+        { name: "🧩 1. Ordénalo",         duration: 10 },
+        { name: "🔥 2. Desafíos",         duration: 10 },
+        { name: "🧠 3. Memory",           duration: 10 },
+        { name: "🎭 4. Rol",              duration: 10 },
+        { name: "❓ 5. Quiz",             duration: 10 },
+        { name: "🏁 Cierre: Reflexión",   duration: 5 }
     ];
 
     /* =========================================================
@@ -185,6 +187,7 @@
 
 })();
 </script>
+
 
 
 
