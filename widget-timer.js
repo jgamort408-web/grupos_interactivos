@@ -5,7 +5,7 @@
     const CONFIG = {
         // HORA DE INICIO (Hora peninsular española)
         startHour: 18,    
-        startMinute: 00,   
+        startMinute: 30,   
         
         // Título del widget
         title: "⚡ SESIÓN EN VIVO",
@@ -227,5 +227,6 @@
     }
 
 })();
+
 
 
