@@ -4,8 +4,8 @@
        ========================================================= */
     const CONFIG = {
         // HORA DE INICIO (Hora peninsular española)
-        startHour: 17,    
-        startMinute: 30,   
+        startHour: 18,    
+        startMinute: 0,   
         
         // Título del widget
         title: "⚡ SESIÓN EN VIVO",
@@ -227,3 +227,4 @@
     }
 
 })();
+
