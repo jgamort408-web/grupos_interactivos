@@ -136,7 +136,7 @@
         }
     }
 
-    // 4. CEREBRO DEL TIMER (Sincronización)
+  // 4. CEREBRO DEL TIMER (Sincronización)
     function updateTimer() {
         const now = new Date();
         
@@ -152,19 +152,31 @@
         // Diferencia en segundos desde el inicio
         let diffSeconds = Math.floor((now - startTime) / 1000);
 
-        // A. SI AÚN NO HA EMPEZADO
-        if (diffSeconds < 0) {
-            // Ocultar widget si falta más de 1 hora, mostrar si falta poco (opcional, aquí lo ocultamos hasta la hora)
-            // Si quieres que aparezca ANTES con cuenta atrás global, cambia este if.
-            // Por ahora: Oculto hasta la hora.
-            if(widgetContainer) widgetContainer.style.display = 'none';
-            return;
-        }
-
-        // B. SI YA EMPEZÓ: Mostrar widget
+        // Aseguramos que el widget sea visible SIEMPRE
         if(widgetContainer) widgetContainer.style.display = 'block';
 
-        // Buscar en qué tarea estamos
+        // A. SI AÚN NO HA EMPEZADO (Cuenta regresiva negativa)
+        if (diffSeconds < 0) {
+            const waitSeconds = Math.abs(diffSeconds); // Convertir a positivo
+            
+            // Si falta más de una hora, mostramos horas
+            if (waitSeconds > 3600) {
+                 const h = Math.floor(waitSeconds / 3600);
+                 const m = Math.floor((waitSeconds % 3600) / 60).toString().padStart(2, '0');
+                 document.getElementById('gi-countdown').innerText = `-${h}h ${m}m`;
+            } else {
+                 // Si falta menos de una hora, mostramos minutos:segundos
+                 const m = Math.floor(waitSeconds / 60).toString().padStart(2, '0');
+                 const s = (waitSeconds % 60).toString().padStart(2, '0');
+                 document.getElementById('gi-countdown').innerText = `-${m}:${s}`;
+            }
+
+            document.getElementById('gi-task-name').innerText = "⏳ Esperando inicio...";
+            document.getElementById('gi-progress-fill').style.width = "0%";
+            return; // Salimos, no buscamos tareas todavía
+        }
+
+        // B. SI YA EMPEZÓ: Buscar en qué tarea estamos
         let accumulatedSeconds = 0;
         let foundPhase = false;
 
@@ -195,7 +207,7 @@
                 const percent = (secondsIntoPhase / phaseDurationSec) * 100;
                 document.getElementById('gi-progress-fill').style.width = `${percent}%`;
 
-                // Color especial para descansos o cierre (opcional)
+                // Color especial para descansos
                 const titleEl = document.getElementById('gi-timer-header');
                 if(i === 0 || i === SCHEDULE.length - 1) titleEl.style.color = CONFIG.theme.ok;
                 else titleEl.style.color = CONFIG.theme.accent;
@@ -224,3 +236,4 @@
 
 
 })();
+
