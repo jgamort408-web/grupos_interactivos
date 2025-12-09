@@ -4,8 +4,8 @@
        ========================================================= */
     const CONFIG = {
         // ¿A qué hora empieza la sesión hoy? (Formato 24h)
-        startHour: 18,    
-        startMinute: 0,   
+        startHour: 17,    
+        startMinute: 20,   
         
         // Título del widget
         title: "⚡ SESIÓN EN VIVO",
@@ -221,5 +221,6 @@
         setInterval(updateTimer, 1000); // Revisar cada segundo
         updateTimer(); // Ejecutar primera vez inmediatamente
     }
+
 
 })();
