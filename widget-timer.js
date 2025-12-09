@@ -10,8 +10,8 @@
     const CONFIG = {
         // Pon aquí la hora real de tu clase. 
         // He puesto la hora actual para que veas el efecto al abrir la página.
-        startHour: now.getHours(),      
-        startMinute: now.getMinutes(),   
+        startHour: 18,      
+        startMinute: 30,   
         
         title: "⚡ SESIÓN EN VIVO",
         
@@ -185,6 +185,7 @@
 
 })();
 </script>
+
 
 
 
